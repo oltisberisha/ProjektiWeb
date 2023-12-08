@@ -544,3 +544,11 @@ footer{
 .footerBottom p{
   color: #fff;
 }
+
+#headerdiv {
+  margin-top: 300px;
+}
+
+footer{
+  margin-top:50px;
+}
