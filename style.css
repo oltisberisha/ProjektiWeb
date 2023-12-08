@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     min-height: 100vh;
     background-color: #20232f;
     /* background-color: #20232f; */
@@ -424,11 +425,62 @@
 .paragrafi{
   color: #fff;
   text-align: center;
-  font-size: 25px;
+  font-size: 22  px;
   font-weight: 500;
   margin-top: 20px;
   margin-left: 7%;
   margin-right: 7%;
   padding-bottom: 40px; 
 }
+<<<<<<< HEAD
 
+=======
+/* /////////////////////////////////////////////////////////////////////// */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.social-media a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+}
+/* ////////////////////////////////////////////////////////////////////// */
+
+footer{
+  background-color: #111;
+  display: flex;
+  flex-direction: row;
+}
+.footer-container{
+  width: 100%;
+  padding: 70px 30px 20px;
+}
+>>>>>>> d44d971258d44ad8d1c55df29416688e13ebd104
