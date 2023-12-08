@@ -10,7 +10,7 @@ registerLink.addEventListener('click', () => {
 loginLink.addEventListener('click', () => {
   wrapper.classList.remove('active');
 });
-loginForm.addEventListener('submit', (event) => { // Change this line
+loginForm.addEventListener('submit', (event) => { 
   event.preventDefault(); 
 
   window.location.href = "Home.html"; 
