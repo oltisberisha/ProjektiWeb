@@ -90,7 +90,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 0%;
+  margin-top: 0;
   height: 250px;
 }
 .heading h1{
@@ -594,6 +594,7 @@ footer{
 
 #headerdiv {
   margin-top: 300px;
+ 
 }
 
 footer{
