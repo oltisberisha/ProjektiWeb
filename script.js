@@ -1,19 +1,4 @@
-const wrapper = document.querySelector('.wrapper');
-const loginLink = document.querySelector('.login-link');
-const registerLink = document.querySelector('.register-link');
-const loginForm = document.getElementById('loginForm');
 
-registerLink.addEventListener('click', () => {
-  wrapper.classList.add('active');
-});
-
-loginLink.addEventListener('click', () => {
-  wrapper.classList.remove('active');
-});
-loginForm.addEventListener('submit', (event) => { 
-  event.preventDefault(); 
-
-});
 function validateForm() {
   var username = document.getElementById("Username").value;
   var email = document.getElementById("email").value;
@@ -35,7 +20,7 @@ function validateForm() {
       return false;
   }
   alert("Registration successful!");
-  wrapper.classList.remove('active');
+  // wrapper.classList.remove('active');
   return true;
 }
 function validateLoginForm() {

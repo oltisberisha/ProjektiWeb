@@ -34,80 +34,58 @@
       </header>
 
     <div class="wrapper">
-      <div class="form-box login" onsubmit="return validateLoginForm()">
+      <?php
+      session_start();
+      require("database.php");
+      if (isset($_POST["login"])) {
+        $email=$_POST["email"];
+        $password=$_POST["password"];
+        $sql = "SELECT * FROM users WHERE email='$email'";
+        $result=mysqli_query($conn,$sql);
+        $user=mysqli_fetch_array($result, MYSQLI_ASSOC);
+        if ($user) {
+          if (password_verify($password,$user["password"])) {
+            header("Location: home.php");
+            die();
+          }
+          else {
+            echo "<div>Password does not match!</div>";
+          }
+        }else {
+          echo "<div>Email does not exist!</div>";
+        }
+      
+      }
+      
+      
+      
+      ?>
+      <div class="form-box login">
         <h2>Login</h2>
-        <?php
-        print_r($_POST)
-        
-        ?>
         <form action="login.php" method="post">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
             <input type="email" name="email" placeholder="Email">
-            <!-- <label>Email</label> -->
           </div>
           <div class="input-box">
             <span class="icon"
               ><ion-icon name="lock-closed-outline"></ion-icon></span>
             <input type="password" name="password" placeholder="Password">
-            <!-- <label>Password</label> -->
           </div>
           <div class="remember-forgot">
             <label><input type="checkbox" />Remember me</label>
             <a href="#">Forgot Password</a>
           </div>
-          <button type="submit" class="btn">Login</button>
+          <button type="submit" class="btn" value="Login" name="login">Login</button>
           <div class="login-register">
             <p>
-              Don't have an account?<a href="#" class="register-link"
-                >Register</a
+              Don't have an account?<a href="signup.php">Register</a
               >
             </p>
           </div>
         </form>
       </div>
-
-      <div class="form-box register"  onsubmit="return validateForm()">
-        <h2>Register</h2>
-        <?php
-        print_r($_POST)
-        
-        ?>
-        <form action="#">
-          <div class="input-box">
-            <span class="icon"
-              ><ion-icon name="person-outline"></ion-icon
-            ></span>
-            <input type="text" name="Username" placeholder="Username">
-            
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-            <input type="email" name="Email" placeholder="Email">
-            
-          </div>
-          <div class="input-box">
-            <span class="icon"
-              ><ion-icon name="lock-closed-outline"></ion-icon
-            ></span>
-            <input type="password" name="Password" placeholder="Password"/>
-            
-          </div>
-          <div class="remember-forgot">
-            <label
-              ><input type="checkbox" />I agree to the terms &
-              condicioning</label
-            >
-          </div>
-          <button type="submit" class="btn">Register</button>
-          <div class="login-register">
-            <p>
-              Already have an account?<a href="#" class="login-link">Login</a>
-            </p>
-          </div>
-        </form>
-      </div>
-    </div>
+      
 
     <script src="script.js"></script>
     <script
