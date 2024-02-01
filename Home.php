@@ -30,6 +30,7 @@
         <a href="Home.php"><h2 class="logo">Gaming News-ESPORTS</h2></a>
         <nav class="navigacion">
           <a class="a1" href="Home.php">Home</a>
+          <a class="a1" href="ContactUs.php">Contact Us</a>
           <div class="dropdown">
             <a href="" class="dropbtn">Games</a>
           <div class="dropdown-content">
