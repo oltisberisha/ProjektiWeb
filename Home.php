@@ -42,7 +42,6 @@ if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@ubt.com') {
         <nav class="navigacion">
         <a href="dashboard.php" target="_blank" style="text-decoration: none; color: white; font-weight: bold; <?php echo $admin ? 'display:flex;' : 'display:none;'; ?>" class="rg">Dashboard</a>
           <a class="a1" href="Home.php">Home</a>
-          <a class="a1" href="ContactUs.php">Contact Us</a>
           <div class="dropdown">
             <a href="" class="dropbtn">Games</a>
           <div class="dropdown-content">
@@ -54,6 +53,7 @@ if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@ubt.com') {
         </div>
     </div>
           <a class="a1" href="aboutUs.php">About Us</a>
+          <a class="a1" href="ContactUs.php">Contact Us</a>
           <a href="Login.php"><button class="logB">Login</button></a>
         </nav>
       </header>
@@ -173,7 +173,7 @@ if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@ubt.com') {
 
   </div>  
 </main>
-  <footer>
+<footer>
     <div class="footer-container">
       <div class="socialIcons">
         <a href=""><i class="fa-brands fa-facebook"></i></a>
