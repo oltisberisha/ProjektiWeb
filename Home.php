@@ -1,3 +1,14 @@
+<?php
+session_start();
+require("database.php");
+
+$admin = false;
+
+if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@ubt.com') {
+    $admin = true;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,6 +40,7 @@
   <header>
         <a href="Home.php"><h2 class="logo">Gaming News-ESPORTS</h2></a>
         <nav class="navigacion">
+        <a href="dashboard.php" target="_blank" style="text-decoration: none; color: white; font-weight: bold; <?php echo $admin ? 'display:flex;' : 'display:none;'; ?>" class="rg">Dashboard</a>
           <a class="a1" href="Home.php">Home</a>
           <a class="a1" href="ContactUs.php">Contact Us</a>
           <div class="dropdown">

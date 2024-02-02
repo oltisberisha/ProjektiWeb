@@ -1,3 +1,15 @@
+<?php
+session_start();
+require("database.php");
+$query = "SELECT * FROM news WHERE loja='gta'";
+$result0 = mysqli_query($conn, $query);
+$gta = mysqli_fetch_assoc($result0)
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,11 +95,9 @@ width: 100%;
             
             <fieldset>
               
-                <legend>Braking News: GTA 6 trailer breaks record!</legend>
+                <legend><?php echo $gta['titulli'] ?></legend>
                 <p>
-                  The trailer also broke three world records. The trailer became the most viewed videogame reveal
-                   on YouTube in 24 hours with 90,421,491 views.
-                   Further, it also became the most-liked videogame trailer on YouTube with 8.9 million likes in the first 24 hours.
+                <?php echo $gta['lajmi'] ?>
                 </p>
           </fieldset>
           <fieldset>

@@ -1,0 +1,230 @@
+:root {
+    --main: #FFFFFF;
+    --navbar: #e7f6e2;
+    --background: #B2C8BA;
+    --primary: #86A789;
+    --secondary: #393E46;
+    --contrast-color: #427D9D;
+}
+html * {
+    font-family: RobotoBold;
+
+}
+body {
+    margin: auto;
+    margin-right: 20px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 225px calc(100% - 225px);
+    gap: 20px;
+    background-color: var(--background);
+}
+/*navigation bar styling*/
+
+nav {
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--navbar);
+    border: 5px solid var(--main);
+}
+#topnav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 480px;
+}
+#profile {
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+#pfp-container {
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    border-radius: 50%;
+    margin: auto;
+}
+#theme {
+    width: 100%;
+    text-align: center;
+}
+#edit-profile {
+    background-color: var(--secondary);
+    color: var(--main);
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+}
+.username {
+    margin: 8px 0;
+}
+.nav-list {
+    padding: 0 30px;
+    list-style-type: none;
+    margin: 5px;
+}
+.nav-item a {
+    height: 50px;
+    width: 160px;
+    text-decoration: none;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    font-size: 1.3rem;
+}
+.nav-item a:hover {
+    transform: scale(1.1);
+}
+.nav-item svg {
+    margin-right: 10px;
+}
+.title h2{
+    height: 55px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 1.8rem;
+}
+main {
+    display: grid;
+    grid-template-columns: calc(100% - 250px) 250px ;
+    grid-template-rows: 80px;
+    gap: 20px;
+    width: calc(100% - 20px);
+}
+main > header {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--main);
+}
+main > div {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--main);
+}
+li{
+    list-style: none;
+}
+#projects-container {
+    grid-row: 2 / 4;
+}
+#upload {
+    width: 280px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#search {
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--navbar);
+}
+#upload > button {
+    height: 50px;
+    border-radius: 10px;
+}
+#announcements {
+    display: flex; 
+    flex-direction: column;
+    background-color: var(--secondary);
+}
+#trending {
+    display: flex; 
+    flex-direction: column;
+}
+.cardHeader {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+#projects {
+    height: calc(100% - 50px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px;
+    background-color: var(--primary);
+}
+#project-nav button {
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+}
+#searchbar {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.project {
+    background-color: var(--main);
+    padding: 20px;
+    color: var(--secondary);
+    text-shadow: 1px 1px 5px var(--background);
+}
+.project h3 {
+    margin-top: 0;
+}
+.project p {
+    line-height: 25px;
+}
+.primaryBtn {
+    width: 120px;
+    background-color: var(--secondary);
+    color: var(--background);
+    font-size: 1.1rem;
+}
+.secondaryBtn {
+    width: 50px;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.projectLink {
+    text-decoration: none;
+    color: var(--contrast-color);
+}
+.cardList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    height: 80%;
+}
+.cardItem {
+    border-bottom: 1px solid black;
+}
+.typeOne {
+    color: var(--secondary);
+}
+
+@media screen and (max-width: 920px) {
+    
+}
+
+@font-face {
+    font-family: RobotoBold;
+    src: url(res/Roboto-Bold.ttf);
+}
