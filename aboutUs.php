@@ -35,6 +35,7 @@
         </div>
     </div>
           <a class="a1" href="aboutUs.php">About Us</a>
+          <a class="a1" href="ContactUs.php">Contact Us</a>
           <a href="Login.php"><button class="logB">Login</button></a>
         </nav>
       </header>

@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="Home.php"><h2 class="logo">Gaming News-ESPORTS</h2></a>
         <nav class="navigacion">
           <a class="a1" href="Home.php">Home</a>
-          <a class="a1" href="ContactUs.php">Contact Us</a>
           <div class="dropdown">
             <a href="" class="dropbtn">Games</a>
           <div class="dropdown-content">
@@ -71,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
           <a class="a1" href="aboutUs.php">About Us</a>
+          <a class="a1" href="ContactUs.php">Contact Us</a>
           <a href="Login.php"><button class="logB">Login</button></a>
         </nav>
       </header>
@@ -90,9 +90,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </section>
 
-
     <footer>
-  
+    <div class="footer-container">
+      <div class="socialIcons">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-google-plus"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="footerNav">
+        <ul>
+          <li ><a href="Home.html">Home</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Our Team</a></li>
+
+        </ul>
+      </div>
       <div class="footerBottom">
         <p>Copyright &copy;2023; Designed by Oltis B. & Lend Sh.</p>
       </div>

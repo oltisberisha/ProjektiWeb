@@ -181,7 +181,7 @@ if (isset($_SESSION['email'])) {
 
   </div>  
 </main>
-  <footer>
+<footer>
     <div class="footer-container">
       <div class="socialIcons">
         <a href=""><i class="fa-brands fa-facebook"></i></a>
