@@ -1,3 +1,30 @@
+<?php
+session_start();
+require("database.php");
+
+if (isset($_POST["login"])) {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $sql = "SELECT * FROM users WHERE email='$email'";
+    $result = mysqli_query($conn, $sql);
+    $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    if ($user) {
+        if (password_verify($password, $user["password"])) {
+            // Store email in session after successful login
+            $_SESSION['email'] = $email;
+
+            // Redirect to home.php
+            header("Location: home.php");
+            die();
+        } else {
+            echo "<div>Password does not match!</div>";
+        }
+    } else {
+        echo "<div>Email does not exist!</div>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,32 +61,6 @@
       </header>
 
     <div class="wrapper">
-      <?php
-      session_start();
-      require("database.php");
-      if (isset($_POST["login"])) {
-        $email=$_POST["email"];
-        $password=$_POST["password"];
-        $sql = "SELECT * FROM users WHERE email='$email'";
-        $result=mysqli_query($conn,$sql);
-        $user=mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if ($user) {
-          if (password_verify($password,$user["password"])) {
-            header("Location: home.php");
-            die();
-          }
-          else {
-            echo "<div>Password does not match!</div>";
-          }
-        }else {
-          echo "<div>Email does not exist!</div>";
-        }
-      
-      }
-      
-      
-      
-      ?>
       <div class="form-box login">
         <h2>Login</h2>
         <form action="login.php" method="post">

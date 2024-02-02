@@ -2,13 +2,16 @@
 session_start();
 require("database.php");
 
-$admin = false;
+if (isset($_SESSION['email'])) {
+    $user_email = $_SESSION['email'];
 
-if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@ubt.com') {
-    $admin = true;
+
+    $is_admin = ($user_email == 'admin@ubt.com');
+} else {
+
+    $is_admin = false;
 }
-?>
-
+?>   
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,20 +43,25 @@ if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@ubt.com') {
   <header>
         <a href="Home.php"><h2 class="logo">Gaming News-ESPORTS</h2></a>
         <nav class="navigacion">
-        <a href="dashboard.php" target="_blank" style="text-decoration: none; color: white; font-weight: bold; <?php echo $admin ? 'display:flex;' : 'display:none;'; ?>" class="rg">Dashboard</a>
+        <?php
+
+        if ($is_admin) {
+            echo '<a class="a1" href="dashboard.php">Dashboard</a>';
+        }
+        ?>
           <a class="a1" href="Home.php">Home</a>
-          <a class="a1" href="ContactUs.php">Contact Us</a>
           <div class="dropdown">
             <a href="" class="dropbtn">Games</a>
-          <div class="dropdown-content">
-        <a href="csgo.php">CS2</a>
-        <a href="fortnite.php">Fortnite</a>
-        <a href="gta6.php">Gta VI</a>
-        <a href="dota.php">Dota 2</a>
-        <a href="rocketleague.php">Rocket League</a>
-        </div>
-    </div>
+            <div class="dropdown-content">
+              <a href="csgo.php">CS2</a>
+              <a href="fortnite.php">Fortnite</a>
+              <a href="gta6.php">Gta VI</a>
+              <a href="dota.php">Dota 2</a>
+              <a href="rocketleague.php">Rocket League</a>
+            </div>
+          </div>
           <a class="a1" href="aboutUs.php">About Us</a>
+          <a class="a1" href="ContactUs.php">Contact Us</a>
           <a href="Login.php"><button class="logB">Login</button></a>
         </nav>
       </header>
