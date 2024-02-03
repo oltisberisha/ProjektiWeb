@@ -1,3 +1,14 @@
+<?php
+session_start();
+require("database.php");
+$query = "SELECT * FROM news WHERE loja='dota'";
+$result0 = mysqli_query($conn, $query);
+$dota = mysqli_fetch_assoc($result0);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,56 +85,23 @@ width: 100%;
       </header>
 
       
-<img src="dota2.jpg" alt="Description" class="fieldset-image">
+<img src="<?php echo $dota['foto']; ?>" alt="Description" class="fieldset-image">
       <div class="banner">
           <div class="content ">
             
-            <fieldset>
-              
-              <legend>NOVEMBER 21, 2023</legend>
-              <p>
-                Gameplay Update 7.34e and What's Up Next.
-                <br>
-                After nearly a year of coordination and production, the multi-week, arena-sized monster that is
-               The International 2023 has come to an exciting close. We've locked up
-               Climate Pledge Arena, we've all seen enough of Spirit Breaker, and we've just shipped Gameplay Update 7.34e.
-              </p>
-          </fieldset>
           <fieldset>
-            <legend>NOVEMBER 1, 2023</legend>
-            <p>
-              The International Grand Champions.
-              <br>
-              Congratulations to Team Spirit, Grand Champions at The International 2023 and just
-                 the second team ever to claim the Aegis twice. This fearsome squad dropped only
-                  two games the entire tournament — finishing with a decisive 3-0 performance in 
-                  the Grand Finals to secure their spot as the best Dota team in the world.
-            </p>
+          <legend><?php echo $dota['titulli'] ?></legend>
+              <p><?php echo $dota['lajmi'] ?></p>
         </fieldset>
-        <fieldset>
-          <legend>OCTOBER 27, 2023</legend>
-          <p>
-            The International is here.
-            <br>
-            A truly epic Playoffs weekend has come to a close, and eight teams have clawed their way to a coveted spot at
-            the main event: Team Spirit, Team Liquid, LGD Gaming and Azure Ray in the upper bracket, and Gaimin Gladiators, nouns,
-             BetBoom Team and Virtus.pro in the lower bracket. Congratulations to all eight teams as they vie
-            to capture the Aegis at The International — only at Climate Pledge Arena in Seattle, WA, and now only a day away.
-          </p>
-         </fieldset>
-         <fieldset>
-          <legend>OCTOBER 20  , 2023</legend>
-          <p>
-            Get Ready for Playoffs Weenkend!
-           <br>
-           Twenty teams entered Group Stage weekend. And now, four intense days, four eliminations, 57 goodlike sprees,
-             six rampages, 104 heroes picked, and 100 total matches later, eight teams now sit in the upper bracket
-              and eight in the lower, with mere hours before the real fight begins. 
-            That’s right: It’s Playoffs time. If you're a ticket holder, doors open at the Seattle Convention Center’s 
-            Summit at 9 AM PDT on Friday, October 20th. The pre-show and livestream start at 9:30 AM PDT,
-             with matches starting at 10 AM PDT.
-          </p>
-           </fieldset>
+          <fieldset>
+          <legend><?php echo $dota['titulli1'] ?></legend>
+              <p><?php echo $dota['lajmi1'] ?></p>
+        </fieldset>
+          <fieldset>
+          <legend><?php echo $dota['titulli2'] ?></legend>
+              <p><?php echo $dota['lajmi2'] ?></p>
+        </fieldset>
+          
            <footer>
             <div class="footer-container">
               <div class="socialIcons">

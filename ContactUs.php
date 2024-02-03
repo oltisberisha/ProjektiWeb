@@ -30,32 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="CSstyle.css" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-     @media screen and (max-width: 768px) {
-      header {
-        padding: 10px;
-      }
-
-      .logo {
-        font-size: 1.2em;
-      }
-
-      .a1 {
-        margin-left: 5px;
-      }
-
-      .dropdown-content {
-        min-width: 150px;
-      }}
-      </style>
 </head>
 <body>
 
-    <header>
+<header>
         <a href="Home.php"><h2 class="logo">Gaming News-ESPORTS</h2></a>
         <nav class="navigacion">
           <a class="a1" href="Home.php">Home</a>

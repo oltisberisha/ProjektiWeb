@@ -1,0 +1,72 @@
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .content {
+        padding: 15px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .content {
+        padding: 30px;
+    }
+}
+
+.users {
+    margin-left: 50px;
+    background-color: white;
+    float: left;
+    transform: translate();
+}
+
+.coments {
+    margin-left: 50px;
+    background-color: white;
+
+    float: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 30%;
+    margin: 10px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+#inputBox {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+main{
+    display: flex;
+    margin-top: 150px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.lajmet{
+    display: flex;
+    margin-top: 500px;
+}

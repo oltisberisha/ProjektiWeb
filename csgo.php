@@ -1,3 +1,14 @@
+<?php
+session_start();
+require("database.php");
+$query = "SELECT * FROM news WHERE loja='cs2'";
+$result0 = mysqli_query($conn, $query);
+$cs2 = mysqli_fetch_assoc($result0);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,55 +84,24 @@ width: 100%;
       </header>
 
       
-<img src="csgo.jpg" alt="Description" class="fieldset-image">
+<img src="<?php echo $cs2['foto']; ?>" alt="Description" class="fieldset-image">
       <div class="banner">
           <div class="content ">
             
             <fieldset>
               
-              <legend>Release Notes for December 8, 2023</legend>
-              <p>
-                  [ GAMEPLAY ]. 
-                   Fixed a bug where explicit weapon switches right after grenade throws were delayed slightly  
-
-                  [ MAPS ] Inferno: Fixed a bug where you could plant C4 in planter
-              </p>
+            <legend><?php echo $cs2['titulli'] ?></legend>
+              <p><?php echo $cs2['lajmi'] ?></p>
           </fieldset>
           <fieldset>
-            <legend>Release Notes for 12/6/2023</legend>
-            <p>
-              [ GAMEPLAY ]
-              Fixed an issue where the player's shadow would sometimes show the incorrect animation state
-              Weapon switching after releasing the fire button(s) will no longer cancel grenade throws (but round restart will)
-              Various animation system optimizations
-              Various minor bug fixes to demo playback
-              
-              [ UI ]
-              Fixed a bug where starting pistols weren't showing in the Pistols tab of the Equipment view
-              Fixed an issue where silencers would not be shown on weapons when held by characters in the UI
-              
-              [ MAPS ]
-              Mirage:
-              Fixed a gap under the door at Middle
-            </p>
+          <legend><?php echo $cs2['titulli1'] ?></legend>
+              <p><?php echo $cs2['lajmi1'] ?></p>
         </fieldset>
         <fieldset>
-          <legend>Release Notes for 12/4/2023</legend>
-          <p>
-            Fixed a bug where grenade throw strength adjustments were sometimes delayed
-            Fixed a bug where attempting to switch to a grenade immediately after throwing it would cancel the throw
-            You can now get an intermediate strength grenade throw without a delay by pressing primary and secondary attack simultaneously
-            Fixed several cases of players sticking while sliding against geometry
-            Player pings will now be displayed in the player's color.
-          </p>
-         </fieldset>
-         <fieldset>
-          <legend>DECEMBER 1, 2023</legend>
-          <p>
-            Sub-tick timing improvements to various systems including grenade throw animations and revolver firing
-            Added a missing fire effect to molotovs that are held by players.
-          </p>
-           </fieldset> <footer>
+          <legend><?php echo $cs2['titulli2'] ?></legend>
+              <p><?php echo $cs2['lajmi2'] ?></p>
+        </fieldset>
+         <footer>
             <div class="footer-container">
               <div class="socialIcons">
                 <a href=""><i class="fa-brands fa-facebook"></i></a>

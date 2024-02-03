@@ -1,4 +1,20 @@
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 10px;
+    }
+}
 
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .content {
+        padding: 15px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .content {
+        padding: 30px;
+    }
+}
 /*===============contactus style================================*/
 
 section {
@@ -28,7 +44,7 @@ input, textarea {
 button {
     background-color: purple;
     color: white;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     border: none;
     border-radius: 4px;
     cursor: pointer;
