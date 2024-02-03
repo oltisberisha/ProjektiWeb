@@ -1,30 +1,21 @@
 <?php
 session_start();
-require("database.php");
+require("Database.php"); 
+require("LoginController.php");
 
 if (isset($_POST["login"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $sql = "SELECT * FROM users WHERE email='$email'";
-    $result = mysqli_query($conn, $sql);
-    $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    if ($user) {
-        if (password_verify($password, $user["password"])) {
-            
-            $_SESSION['email'] = $email;
+    $loginController = new LoginController();
+    $loginController->loginUser($email, $password);
 
-      
-            header("Location: home.php");
-            die();
-        } else {
-            echo "<div>Password does not match!</div>";
-        }
-    } else {
-        echo "<div>Email does not exist!</div>";
-    }
+    $loginController->closeConnections();
 }
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
