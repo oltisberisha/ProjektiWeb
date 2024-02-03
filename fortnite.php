@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("database.php");
+require("database1.php");
 $query = "SELECT * FROM news WHERE loja='fortnite'";
 $result0 = mysqli_query($conn, $query);
 $fort = mysqli_fetch_assoc($result0);

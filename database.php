@@ -1,27 +1,33 @@
 <?php
 
-$servername="localhost";
-$dbUser="root";
-$dbPassword="";
-$dbname="register";
+class Database
+{
+    private $conn;
 
-$conn=mysqli_connect($servername, $dbUser, $dbPassword, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    public function __construct()
+    {
+        $servername="localhost";
+        $dbUser="root";
+        $dbPassword=""; 
+        $dbname="register";
 
-function getUserByEmail($email) {
-    global $conn;
 
-    $email = $conn->real_escape_string($email);
+        $this->conn = new mysqli($servername, $dbUser, $dbPassword, $dbname);
 
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = $conn->query($sql);
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
+        }
+    }
 
-    if ($result->num_rows > 0) {
-        return $result->fetch_assoc();
-    } else {
-        return false;
+    public function getConnection()
+    {
+        return $this->conn;
+    }
+
+    public function closeConnection()
+    {
+        $this->conn->close();
     }
 }
+
 ?>

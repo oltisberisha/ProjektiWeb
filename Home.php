@@ -1,21 +1,54 @@
 <?php
 session_start();
-require("database.php");
+require("Database.php"); 
 
-if (isset($_SESSION['email'])) {
-    $user_email = $_SESSION['email'];
+class SliderManager
+{
+    private $conn;
 
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
 
-    $is_admin = ($user_email == 'admin@ubt.com');
-} else {
-
-    $is_admin = false;
+    public function getSliderData()
+    {
+        $query = "SELECT * FROM slider";
+        $result = mysqli_query($this->conn, $query);
+        return mysqli_fetch_assoc($result);
+    }
 }
-$query = "SELECT * FROM slider";
-$result0 = mysqli_query($conn, $query);
-$slider = mysqli_fetch_assoc($result0);
 
-?>   
+class UserManager
+{
+    private $conn;
+
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
+
+    public function isAdmin()
+    {
+        if (isset($_SESSION['email'])) {
+            $user_email = $_SESSION['email'];
+            return ($user_email == 'admin@ubt.com');
+        } else {
+            return false;
+        }
+    }
+}
+
+
+$database = new Database();
+$conn = $database->getConnection();
+
+$sliderManager = new SliderManager($conn);
+$slider = $sliderManager->getSliderData();
+
+$userManager = new UserManager($conn);
+$is_admin = $userManager->isAdmin();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

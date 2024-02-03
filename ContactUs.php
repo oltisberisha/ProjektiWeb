@@ -1,29 +1,48 @@
 <?php
 session_start();
-require("database.php");
+require("Database.php");
+
+class CommentSubmission {
+    private $conn;
+
+    public function __construct($conn) {
+        $this->conn = $conn;
+    }
+
+    public function submitComment($name, $email, $message) {
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
+        }
+
+        $sql = "INSERT INTO comentet(emri, email, comment) VALUES (?, ?, ?)";
+        $stmt = $this->conn->prepare($sql);
+
+        if ($stmt) {
+            $stmt->bind_param("sss", $name, $email, $message);
+            $stmt->execute();
+
+            echo "Comment submitted successfully!";
+            $stmt->close();
+        } else {
+            echo "Error: " . $sql . "<br>" . $this->conn->error;
+        }
+    }
+}
+
+$db = new Database();
+$conn = $db->getConnection();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $message = $_POST["message"];
 
-   
-    
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    $commentSubmission = new CommentSubmission($conn);
+    $commentSubmission->submitComment($name, $email, $message);
+}
 
-    $sql = "INSERT INTO comentet(emri,email,comment) VALUES ('$name', '$email', '$message')";
-    if ($conn->query($sql) === TRUE) {
-      echo "Comment submitted successfully!";
-  } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-
-    }
-    $conn->close();
-
-  }
+$db->closeConnection();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

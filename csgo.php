@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("database.php");
+require("database1.php");
 $query = "SELECT * FROM news WHERE loja='cs2'";
 $result0 = mysqli_query($conn, $query);
 $cs2 = mysqli_fetch_assoc($result0);

@@ -2,16 +2,42 @@
 
 session_start();
 require("database.php");
-$query = "SELECT * FROM users";
-$result0 = mysqli_query($conn, $query);
+require("database1.php");
 
-$query2 = "SELECT * FROM comentet";
-$result1 = mysqli_query($conn, $query2);
+class DataFetcher {
+    private $conn;
 
-$query3 = "SELECT * FROM news";
-$result2 = mysqli_query($conn, $query3);
+    public function __construct($conn) {
+        $this->conn = $conn;
+    }
 
+    public function fetchUsers() {
+        $query = "SELECT * FROM users";
+        $result = mysqli_query($this->conn, $query);
 
+        return $result;
+    }
+
+    public function fetchComments() {
+        $query = "SELECT * FROM comentet";
+        $result = mysqli_query($this->conn, $query);
+
+        return $result;
+    }
+
+    public function fetchNews() {
+        $query = "SELECT * FROM news";
+        $result = mysqli_query($this->conn, $query);
+
+        return $result;
+    }
+}
+
+$dataFetcher = new DataFetcher($conn);
+
+$result0 = $dataFetcher->fetchUsers();
+$result1 = $dataFetcher->fetchComments();
+$result2 = $dataFetcher->fetchNews();
 
 ?>
 <!DOCTYPE html>

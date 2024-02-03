@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("database.php");
+require("database1.php");
 $query = "SELECT * FROM news WHERE loja='gta'";
 $result0 = mysqli_query($conn, $query);
 $gta = mysqli_fetch_assoc($result0);

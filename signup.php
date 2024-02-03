@@ -42,7 +42,7 @@ class UserRegistration {
             if ($prepareStmt) {
                 mysqli_stmt_bind_param($stmt, "sss", $username, $email, $passwordhash);
                 mysqli_stmt_execute($stmt);
-                // echo "<div class='alert alert-succes'>You are registered successfully.</div>";
+
             } else {
                 die("Something went wrong");
             }
@@ -52,6 +52,7 @@ class UserRegistration {
 
 session_start();
 require("database.php");
+require("database1.php");
 
 $userRegistration = new UserRegistration($conn);
 
