@@ -11,6 +11,10 @@ if (isset($_SESSION['email'])) {
 
     $is_admin = false;
 }
+$query = "SELECT * FROM slider";
+$result0 = mysqli_query($conn, $query);
+$slider = mysqli_fetch_assoc($result0);
+
 ?>   
 <!DOCTYPE html>
 <html lang="en">
@@ -86,19 +90,19 @@ if (isset($_SESSION['email'])) {
 
 
         <div class="slide first">
-              <img src="csgo.jpg" alt="foto">
+              <img src="<?php echo $slider['foto1']; ?>" alt="foto">
         </div>
         <div class="slide">
-              <img src="dota2.jpg" alt="">
+              <img src="<?php echo $slider['foto2']; ?>" alt="">
         </div>
         <div class="slide">
-          <img src="4229577-fortnitechapter5season1battlepass.jpg" alt="">
+          <img src="<?php echo $slider['foto3']; ?>" alt="">
         </div>
         <div class="slide">
-            <img src="gta.jpg" alt="">
+            <img src="<?php echo $slider['foto4']; ?>" alt="">
         </div>
         <div class="slide">
-          <img src="RocketLeague.jpg" alt="">
+          <img src="<?php echo $slider['foto5']; ?>" alt="">
       </div>
 
         <div class="navigation-auto">
@@ -109,14 +113,6 @@ if (isset($_SESSION['email'])) {
         </div>
 
 
-      </div>
-
-       <div class="navigatin-manual">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-            <label for="radio4" class="manual-btn"></label>
-            <label for="radio5" class="manual-btn"></label>
       </div> 
 
     </div>

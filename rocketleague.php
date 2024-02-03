@@ -1,3 +1,13 @@
+<?php
+session_start();
+require("database.php");
+$query = "SELECT * FROM news WHERE loja='rl'";
+$result0 = mysqli_query($conn, $query);
+$rl = mysqli_fetch_assoc($result0);
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,58 +84,23 @@ width: 100%;
       </header>
 
       
-<img src="RocketLeague.jpg" alt="Description" class="fieldset-image">
+<img src="<?php echo $rl['foto']; ?>" alt="Description" class="fieldset-image">
       <div class="banner">
           <div class="content ">
             
-            <fieldset>
-              
-              <legend>DECEMBER 8, 2023</legend>
-              <p>
-                RACE WITHOUT LIMITS IN "ROCKET RACING"
-                <br>
-                Rocket-powered cars hit the racetrack in the new arcade racer "Rocket Racing."
-                You ever wonder what would happen if you drove rocket-powered cars outside the Arena? Turns out it’s very dangerous…
-                 in a good way. Race without limits in Rocket Racing,
-                a new arcade racer from Psyonix! Rocket Racing is available now inside the Fortnite ecosystem.
-              </p>
-          </fieldset>
           <fieldset>
-            <legend>DECEMBER 6, 2023</legend>
-            <p>
-                Rocket League Season 13 is here!
-                <br>
-                Season 13 Rocket Pass, featuring the new Car Bodies Ace and Primo, is now available.
-                The new Arena variants Mannfield (Dusk), Farmstead (Pitched), and Wasteland (Pitched) are live in Online Playlists.
-                Season 12 Competitive Rewards (Goal Explosions) are dropping for all eligible players.
-            </p>
+          <legend><?php echo $rl['titulli'] ?></legend>
+              <p><?php echo $rl['lajmi'] ?></p>
         </fieldset>
-        <fieldset>
-          <legend>DECEMBER 5, 2023 </legend>
-          <p>
-            PATCH NOTES: V2.34
-            <br>
-            v2.34 brings a new Play Menu and Cross-Game items to Rocket League!
-            The Play Menu has been updated with a refreshed look, streamlined layout and organization, and quality of life changes
-            Player-to-Player Trading is no longer available
-            A new Cross-Game item attribute has been added to Rocket League. These items will appear in Fortnite in your Locker 
-            if you play Fortnite using the same Epic Games Account
-            The new Arena variants Mannfield (Dusk), Farmstead (Pitched), and Wasteland (Pitched) are live in Private Matches, 
-            Exhibition Matches, and Free Play
-          </p>
-         </fieldset>
-         <fieldset>
-          <legend>DECEMBER 5, 2023</legend>
-          <p>
-            ROCKET LEAGUE SEASON 13 HITS REWIND TO THE TURN OF THE CENTURY!
-            <br>
-            The 90s and early 2000s, a time that was bold, radical, and most importantly: destined to return 
-            in Rocket League Season 13! Get ready for reminiscent nights at Mannfield—Season 13 kicks off December 6.
-            Here’s the 4-1-1 on this Season’s Rocket Pass Premium. Upon purchase, you’ll auto-unlock the Ace Car Body. 
-            Go up the Tiers to unlock other new items like the RC Antenna, CRT Wheels, Primo Car Body, yadda yadda yadda…
-            (That’s right, Season 13’s Rocket Pass Premium has two different Car Bodies!)
-          </p>
-           </fieldset>
+          <fieldset>
+          <legend><?php echo $rl['titulli1'] ?></legend>
+              <p><?php echo $rl['lajmi1'] ?></p>
+        </fieldset>
+          <fieldset>
+          <legend><?php echo $rl['titulli2'] ?></legend>
+              <p><?php echo $rl['lajmi2'] ?></p>
+        </fieldset>
+          
            <footer>
             <div class="footer-container">
               <div class="socialIcons">

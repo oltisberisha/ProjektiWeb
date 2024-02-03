@@ -1,3 +1,14 @@
+<?php
+session_start();
+require("database.php");
+$query = "SELECT * FROM news WHERE loja='fortnite'";
+$result0 = mysqli_query($conn, $query);
+$fort = mysqli_fetch_assoc($result0);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,47 +84,23 @@ width: 100%;
       </header>
 
       
-<img src="4229577-fortnitechapter5season1battlepass.jpg" alt="Description" class="fieldset-image">
+<img src="<?php echo $fort['foto']; ?>" alt="Description" class="fieldset-image">
       <div class="banner">
           <div class="content ">
             
-            <fieldset>
-              
-              <legend>Release Notes for 7.12.2023</legend>
-              <p>
-                WELCOME TO LEGO FORTNITE!
-                <br>
-                The adventure is building! Welcome to LEGO® Fortnite, a brand new survival
-                 crafting adventure in Fortnite. Learn about Fortnite and start playing for free today! 
-              </p>
-          </fieldset>
           <fieldset>
-            <legend>Reviews for Chapter 5:</legend>
-            <p>
-                As fans bid farewell to the Fortnite OG map, they express disappointment with the movement in the new chapters,
-                 feeling that it slows down the pace. The new attachments for guns are received with mixed feelings;
-                  some fans are happy, while others assert that it doesn't feel like Fortnite anymore. Nevertheless,
-                   most are excited about the new collaborations coming to the game.
-            </p>
+          <legend><?php echo $fort['titulli'] ?></legend>
+              <p><?php echo $fort['lajmi'] ?></p>
+        </fieldset>
+          <fieldset>
+          <legend><?php echo $fort['titulli1'] ?></legend>
+              <p><?php echo $fort['lajmi1'] ?></p>
         </fieldset>
         <fieldset>
-          <legend>Release Notes for 3.12.2023</legend>
-          <p>
-            Chapter 5 of Fortnite Battle Royale brings a beautiful new Island, but not all is what it seems. “The Society” is pulling the 
-            strings in secret, and they’ve taken Peely in their spite. Join “The Underground” and take down The Society’s bosses — including 
-            its most notorious boss Valeria. To help you out, take 
-            the Island’s train, modify your weapons, and use a “Ballistic Shield” while shooting a pistol. Join the fight in Chapter
-             5 Season.
-          </p>
-         </fieldset>
-         <fieldset>
-          <legend>Reviews for Eminem event:</legend>
-          <p>
-            Fans were upset because the servers weren't working, and most of them didn't get to enjoy the main event that happened that day.
-             However, those who did attend were happy, even though Eminem only performed two songs.
-                Most importantly, they were sad about the old map getting destroyed for the second time.
-          </p>
-           </fieldset>
+          <legend><?php echo $fort['titulli2'] ?></legend>
+              <p><?php echo $fort['lajmi2'] ?></p>
+        </fieldset>
+         
 
 
            <footer>

@@ -3,7 +3,7 @@ session_start();
 require("database.php");
 $query = "SELECT * FROM news WHERE loja='gta'";
 $result0 = mysqli_query($conn, $query);
-$gta = mysqli_fetch_assoc($result0)
+$gta = mysqli_fetch_assoc($result0);
 
 
 
@@ -90,7 +90,7 @@ width: 100%;
       </header>
 
       
-        <img src="gta.jpg" alt="Description" class="fieldset-image">
+        <img src="<?php echo $gta['foto']; ?>" alt="Description" class="fieldset-image">
       <div class="banner">
           <div class="content ">
             
@@ -102,30 +102,15 @@ width: 100%;
                 </p>
           </fieldset>
           <fieldset>
-            <legend>December 1, 2023</legend>
+          <legend><?php echo $gta['titulli1'] ?></legend>
             <p>
-              TRAILER 1. TUESDAY, DECEMBER 5. 9AM ET.
+            <?php echo $gta['lajmi1'] ?>
             </p>
         </fieldset>
         <fieldset>
-          <legend>December 5, 2023</legend>
-          <p>
-            Grand Theft Auto VI heads to the state of Leonida, home to the neon-soaked 
-            streets of Vice City and beyond in the biggest,
-             most immersive evolution of the Grand Theft Auto series yet.
-              Coming 2025 to PlayStation 5 and Xbox Series X|S.
-          </p>
+        <legend><?php echo $gta['titulli2'] ?></legend>
+          <p> <?php echo $gta['lajmi2'] ?></p>
          </fieldset>
-         <fieldset>
-            <legend>November 30, 2023</legend>
-            <p>
-              New GTA Online Update Coming this December!
-              <br>
-              This winter, the ever-evolving world of GTA Online continues to deliver something for everyone;
-               from a brand new illicit Salvage Yard business fueled by audacious Vehicle Robberies,
-               to Drift Races for select vehicles custom-made for precision slide turns, gassed-up new vehicles, and more.
-            </p>
-        </fieldset>
         <footer>
           <div class="footer-container">
             <div class="socialIcons">
