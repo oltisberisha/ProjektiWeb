@@ -145,4 +145,8 @@ if (isset($_GET["id"])) {
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 4b62568add903510dcfd3613a9f420999e2ed18d
