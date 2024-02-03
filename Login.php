@@ -11,10 +11,10 @@ if (isset($_POST["login"])) {
 
     if ($user) {
         if (password_verify($password, $user["password"])) {
-            // Store email in session after successful login
+            
             $_SESSION['email'] = $email;
 
-            // Redirect to home.php
+      
             header("Location: home.php");
             die();
         } else {

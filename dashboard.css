@@ -39,7 +39,7 @@ body {
     gap: 20px;
     background-color: var(--background);
 }
-/*navigation bar styling*/
+
 
 nav {
     height: calc(100% - 30px);

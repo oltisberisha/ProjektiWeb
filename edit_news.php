@@ -2,7 +2,6 @@
 session_start();
 require("database.php");
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $id = $_POST["id"];
     $loja = $_POST["loja"];
@@ -14,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $lajmi1 = $_POST["lajmi1"];
     $lajmi2 = $_POST["lajmi2"];
 
-    // Use prepared statement to prevent SQL injection
+    
     $updateQuery = $conn->prepare("UPDATE news SET
                                     loja = ?,
                                     foto = ?,
@@ -31,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     if ($updateQuery->execute()) {
         echo "<div>News updated successfully.</div>";
         
-        // Redirect to dashboard.php
+
         header("Location: dashboard.php");
         exit();
     } else {
@@ -41,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $updateQuery->close();
 }
 
-// Retrieve the news details for the specified ID
+
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
     $selectQuery = "SELECT * FROM news WHERE id = $id";
@@ -101,6 +100,6 @@ if (isset($_GET["id"])) {
         </form>
     </main>
 
-    <!-- Include your footer content here if needed -->
+
 </body>
 </html>
