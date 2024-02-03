@@ -57,6 +57,7 @@ if (isset($_GET["id"])) {
 <html lang="en">
 <head>
     <!-- Include your meta tags, title, and styles here -->
+    <link rel="stylesheet" href="edit_news.css" />
 </head>
 <body>
     <!-- Include your header content here if needed -->
